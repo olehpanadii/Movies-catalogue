@@ -38,4 +38,11 @@ list-style:none;
 padding: 0 ;
 
 }
+h1{
+text-align: center;
+margin:0;
+padding:0;}
+a{
+text-decoration:none;
+color: black;}
 `;
