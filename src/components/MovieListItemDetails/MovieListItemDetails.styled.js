@@ -5,6 +5,10 @@ export const Container = styled.div`
   display: flex;
   gap: ${p => p.theme.spacing(15)};
   margin-top: ${p => p.theme.spacing(20)};
+
+  @media only screen and (max-width: 678px) {
+    flex-direction: column;
+  }
 `;
 export const PosterThumb = styled(BsFileImageFill)`
   width: 300px;
@@ -15,11 +19,6 @@ export const MovieImage = styled.img`
   max-width: 300px;
   height: 100%;
   border-radius: 5px;
-
-  @media only screen and (max-width: 678px) {
-    max-width: 240px;
-    height: auto;
-  }
 `;
 
 export const List = styled.ul`
