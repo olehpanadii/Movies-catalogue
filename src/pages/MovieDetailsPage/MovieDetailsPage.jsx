@@ -1,14 +1,9 @@
+import { LinkBar } from 'components/LinkBar/LinkBar';
 import { Loader } from 'components/Loader/Loader';
 import { MovieListItemDetails } from 'components/MovieListItemDetails/MovieListItemDetails';
 import { fetchMovieDetails } from 'helpers/api';
 import { Suspense, useEffect, useState } from 'react';
-import {
-  Link,
-  NavLink,
-  Outlet,
-  useLocation,
-  useParams,
-} from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 
 export default function MovieDetails() {
   const [detailsOfMovie, setDetailsOfMovie] = useState();
@@ -37,10 +32,7 @@ export default function MovieDetails() {
       <Link to={backLink}>← Go back</Link>
 
       <MovieListItemDetails movie={detailsOfMovie} />
-      <nav>
-        <NavLink to={'cast'}>Cast</NavLink>
-        <NavLink to={'reviews'}>Review</NavLink>
-      </nav>
+      <LinkBar />
 
       <Suspense fallback={<Loader loading={true} />}>
         <Outlet />

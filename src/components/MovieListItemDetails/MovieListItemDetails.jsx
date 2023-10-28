@@ -1,4 +1,10 @@
-import { Container, MovieImage } from './MovieListItemDetails.styled';
+import {
+  Container,
+  List,
+  ListItem,
+  MovieImage,
+  PosterThumb,
+} from './MovieListItemDetails.styled';
 
 export const MovieListItemDetails = ({ movie }) => {
   const { vote_average, poster_path, title, overview, genres } = movie;
@@ -8,7 +14,7 @@ export const MovieListItemDetails = ({ movie }) => {
   return (
     <Container>
       <div>
-        {poster_path ? <MovieImage src={url} alt={title} /> : <svg>d</svg>}
+        {poster_path ? <MovieImage src={url} alt={title} /> : <PosterThumb />}
       </div>
       <div>
         <h2>{title}</h2>
@@ -16,11 +22,11 @@ export const MovieListItemDetails = ({ movie }) => {
         <h3>Overview</h3>
         <p>{overview}</p>
         <h3>Genres</h3>
-        <ul>
+        <List>
           {genres.map(gen => (
-            <li key={gen.id}>{gen.name}</li>
+            <ListItem key={gen.id}># {gen.name}</ListItem>
           ))}
-        </ul>
+        </List>
       </div>
     </Container>
   );

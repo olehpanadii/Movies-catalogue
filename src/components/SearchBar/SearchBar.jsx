@@ -1,7 +1,9 @@
+import { Container, Input, SearchButton, SearchIcon } from './SearchBar.styled';
+
 export const SearchBar = ({ onSubmitQuery, onCanceQuery }) => {
   return (
-    <form onSubmit={onSubmitQuery}>
-      <input
+    <Container onSubmit={onSubmitQuery}>
+      <Input
         onChange={onCanceQuery}
         name="query"
         type="text"
@@ -9,7 +11,9 @@ export const SearchBar = ({ onSubmitQuery, onCanceQuery }) => {
         autoFocus
         placeholder="Search movies"
       />
-      <button type="submit">Search</button>
-    </form>
+      <SearchButton type="submit">
+        <SearchIcon />
+      </SearchButton>
+    </Container>
   );
 };
